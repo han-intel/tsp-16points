@@ -16,7 +16,7 @@ p15=[35.49 14.32];
 p16=[39.36 19.56];
 n = [p1;p2;p3;p4;p5;p6;p7;p8;p9;p10;p11;p12;p13;p14;p15;p16];
 d = squareform(pdist(n));
-[tour,eva_climb]=hill_climb(n);
+[tour,eva_climbs]=hill_climb(n);
 [tour2,eva_ox]=evolution_path_ox(n);
 
 
