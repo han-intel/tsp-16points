@@ -28,11 +28,13 @@ while (t<100)
             if evaClimb<eva
                 tour = tourClimb;
                 eva = evaClimb;
-                gtour = tour;
-                geva = eva;
             elseif rand()<=probability
                 tour = tourClimb;
                 eva = evaClimb;
+            end
+            if evaClimb<geva
+                gtour = tourClimb;
+                geva = evaClimb;
             end
         end
     end

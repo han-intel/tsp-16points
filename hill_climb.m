@@ -6,6 +6,9 @@ len=length(city);
 dist=squareform(pdist(city));
 tour=randperm(len);
 eva = evaluate(dist,tour);
+% init a global best tour
+gtour=tour;
+geva = evaluate(dist,gtour);
 while (t<100)
     t=t+1;
     % init iterating tour 
@@ -22,7 +25,15 @@ while (t<100)
                 tour = tourClimb;
                 eva = evaClimb;
             end
+            if evaClimb<geva
+                gtour = tourClimb;
+                geva = evaClimb;
+            end
         end
     end
 end
+% return the global best solution
+tour = gtour;
+eva = geva;
 
+end
